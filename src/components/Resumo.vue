@@ -1,7 +1,7 @@
 <template>
     <Painel titulo="Resumo" roxo>
         <div class="resumo">
-            <span>Total: <strong>{{ total | dinheiro }}</strong></span>
+            <span>Total: <strong>{{ /*2nd form: valorTotal*/ total | dinheiro }}</strong></span>
             <hr>
             <button>Finalizar!</button>
         </div>
@@ -9,12 +9,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-    computed: {
-        total() {
-            return this.$store.getters.valorTotal;
-        }
-    }
+    computed: mapGetters({
+        total: 'valorTotal'
+    })
+
+    //1st form:
+    // computed: {
+    //     total() {
+    //         return this.$store.getters.valorTotal;
+    //     }
+    // }
+
+    //2nd form:
+    // computed: mapGetters(['valorTotal'])
+    
 }
 </script>
 
