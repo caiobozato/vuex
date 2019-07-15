@@ -30,7 +30,11 @@ export default {
             }
             this.sequencia++
             // eslint-disable-next-line
-            this.$store.state.produtos.push(produto);
+            //this.$store.state.produtos.push(produto);
+
+            
+            this.$store.commit('adicionarProduto', produto);
+            //Here I'm commiting the mutation into the state using 'commit' command, passing as parameters the mutation I created with name of 'adicionarProduto' and passing the 'produto' as the payload.
         }
     }
 }
