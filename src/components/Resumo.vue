@@ -12,6 +12,7 @@
 import { mapGetters } from 'vuex';
 
 export default {
+    //3rd and recommended form:
     computed: mapGetters({
         total: 'valorTotal'
     })
